@@ -176,5 +176,6 @@ section.section-show {
   }
 
 section .container {
-    background:rgba(0, 0, 0, 0.9);
+    background:rgba(0, 0, 0, 0.5);
+    padding: 30px 0;
 }
