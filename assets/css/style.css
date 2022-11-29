@@ -38,6 +38,7 @@ body::before {
 /*--------------------------------------------
     Container
 --------------------------------------------*/
+
 .container {
     max-width: 1280px;
     width: 100%;
@@ -176,10 +177,17 @@ section.section-show {
     padding-bottom: 45px;
 }
 
+/* 1024px Compact Size */
+
+@media (max-width: 1280px) {
+    section.section-show {
+        top: 80px;
+    }
+}
+
 section .container {
     background: rgba(0, 0, 0, 0.9);
     padding: 30px 0;
-    border-radius: 1rem;
 }
 
 section .container h1 {
@@ -216,6 +224,7 @@ section .container h1 {
 
 .profile-avatar {
     width: 100%;
+    object-fit: cover;
 }
 
 .row {
@@ -223,7 +232,7 @@ section .container h1 {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    padding-top: 30px;
+    padding-top: 50px;
 }
 
 .col {
@@ -238,6 +247,8 @@ section .container h1 {
     padding-left: 30px;
     width: 33.33%;
 }
+
+
 
 /*--------------------------------------------
     About Section
@@ -257,4 +268,12 @@ section .container h1 {
 .about-row a, .about-row span {
     color: var(--secondary);
     text-decoration: none;
+}
+
+/* Tablet Size */
+@media only screen and (max-width: 768px) {
+    .about-row {
+        display: flex;
+        flex-direction: column;
+    }
 }
