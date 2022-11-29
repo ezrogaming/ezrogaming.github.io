@@ -36,6 +36,55 @@ body::before {
 }
 
 /*--------------------------------------------
+    Mobile Navigation
+--------------------------------------------*/
+
+@media (max-width: 768px) {
+    .mobile-menu {
+        height: 24px;
+        width: 30px;
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        margin: 0;
+        transition: all .5s ease;
+    }
+
+    .mobile-menu div {
+        height: 3px;
+        width: 30px;
+        border-radius: 50px;
+        background-color: var(--foreground);
+        position: absolute;
+        transition: all .55s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .mobile-menu div:nth-child(1) {
+        top: 0;
+    }
+
+    .mobile-menu div:nth-child(2) {
+        top: 8px;
+    }
+
+    .mobile-menu div:nth-child(3) {
+        top: 16px;
+    }
+
+    .mobile-menu:hover div:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .mobile-menu:hover div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu:hover div:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/*--------------------------------------------
     Container
 --------------------------------------------*/
 
@@ -111,6 +160,12 @@ body::before {
     margin: 0;
 }
 
+/* Responsiveness for Mobile */
+@media only screen and (max-width: 576px) {
+    #header.header-top h1 {
+        display: none;
+    }
+}
 
 /* Navbar */
 .navbar {
@@ -223,8 +278,8 @@ section .container h1 {
 }
 
 .profile-avatar {
-    width: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    height: auto;
 }
 
 .row {
@@ -243,17 +298,27 @@ section .container h1 {
 }
 
 .col-sm {
-    display: flex;
-    padding-left: 30px;
-    width: 33.33%;
+    flex: 0 0 auto;
+    width: 33.333%;
+    padding: 0 30px;
 }
 
+@media (max-width: 768px) {
+    .row>* {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+    .profile-avatar {
+        max-width: 90%;
+        padding: 0;
+    }
+}
 
 
 /*--------------------------------------------
     About Section
 --------------------------------------------*/
-
 .about-row {
     display: flex;
     flex-direction: row;
@@ -261,19 +326,13 @@ section .container h1 {
     flex: 1;
 }
 
-.about-row h3 {
+.about-row h4 {
     padding: 0 30px;
+    margin: 10px 0;
 }
 
-.about-row a, .about-row span {
+.about-row a,
+.about-row span {
     color: var(--secondary);
     text-decoration: none;
-}
-
-/* Tablet Size */
-@media only screen and (max-width: 768px) {
-    .about-row {
-        display: flex;
-        flex-direction: column;
-    }
 }
