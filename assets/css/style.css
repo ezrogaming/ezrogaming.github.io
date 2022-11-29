@@ -11,7 +11,7 @@
 
 :root {
     --primary: #393E46;
-    --secondary: #6D9886;
+    --secondary: #22A39F;
     --tertiary: #F2E7D5;
     --foreground: #F7F7F7;
 }
@@ -252,4 +252,9 @@ section .container h1 {
 
 .about-row h3 {
     padding: 0 30px;
+}
+
+.about-row a, .about-row span {
+    color: var(--secondary);
+    text-decoration: none;
 }
