@@ -89,7 +89,6 @@ body::before {
 --------------------------------------------*/
 
 .container {
-    max-width: 1280px;
     width: 100%;
     margin: 0 auto;
     padding: 0 30px;
@@ -99,10 +98,10 @@ body::before {
     #header:has(> div.container) {
         text-align: center;
     }
-
+/* 
     .navbar {
         display: none !important;
-    }
+    } */
 }
 
 /*--------------------------------------------
@@ -118,6 +117,10 @@ body::before {
     z-index: 997;
     overflow-y: auto;
 }
+
+#header * {
+    transition: ease-in-out 0.3s;
+  }
 
 #header {
     color: var(--foreground);
@@ -164,6 +167,36 @@ body::before {
 @media only screen and (max-width: 576px) {
     #header.header-top h1 {
         display: none;
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    #header.header-top .container {
+        max-width: 496px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #header.header-top .container {
+        max-width: 688px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #header.header-top .container {
+        max-width: 912px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #header.header-top .container {
+        max-width: 1140px;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    #header.header-top .container {
+        max-width: 1320px;
     }
 }
 
@@ -232,9 +265,7 @@ section.section-show {
     padding-bottom: 45px;
 }
 
-/* 1024px Compact Size */
-
-@media (max-width: 1280px) {
+@media only screen and (max-width: 576px) {
     section.section-show {
         top: 80px;
     }
@@ -242,11 +273,41 @@ section.section-show {
 
 section .container {
     background: rgba(0, 0, 0, 0.9);
-    padding: 30px 0;
+    padding: 30px;
+}
+
+@media only screen and (min-width: 576px) {
+    section .container {
+        max-width: 540px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    section .container {
+        max-width: 720px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    section .container {
+        max-width: 912px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    section .container {
+        max-width: 1140px;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    section .container {
+        max-width: 1320px;
+    }
 }
 
 section .container h1 {
-    padding: 0 30px;
+    padding: 0 0 30px 0;
     margin: 0;
 }
 
@@ -286,8 +347,6 @@ section .container h1 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
-    padding-top: 50px;
 }
 
 .col {
@@ -300,7 +359,6 @@ section .container h1 {
 .col-sm {
     flex: 0 0 auto;
     width: 33.333%;
-    padding: 0 30px;
 }
 
 @media (max-width: 768px) {
@@ -308,10 +366,6 @@ section .container h1 {
         flex-shrink: 0;
         width: 100%;
         max-width: 100%;
-    }
-    .profile-avatar {
-        max-width: 90%;
-        padding: 0;
     }
 }
 
